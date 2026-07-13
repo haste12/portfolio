@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="dsJeUKp7muUnJwMmEHbWrR-94reljsYTjmvPjfPlKAw" />
+    <meta name="description"
+        content="Senior Software Developer specializing in modern web technologies. Expert in full-stack development, creating exceptional digital experiences.">
+    <meta name="keywords" content="software developer, web developer, full-stack, portfolio">
+    <title>Haste Mohsin - Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./mee.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load fonts non-blocking with font-display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome deferred -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+
+<body>
+    <!-- Background Orbs for entire site -->
+    <div class="site-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text"><span>Haste Mohsin</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link" data-i18n="nav-home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav-about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+                <li><a href="#certificates" class="nav-link" data-i18n="nav-certificates">Certificates</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ku">کوردی</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+
+                <span class="hero-name gradient-text"><span>Haste Mohsin</span>
+            </h1>
+            <div class="hero-subtitle">
+                <span class="typing-text" data-i18n="hero-typing-prefix">Building</span>
+                <span class="typed-words"></span>
+            </div>
+            <p class="hero-description" data-i18n="hero-description">
+                A student at Lebanese French University from Kurdistan. Coding is one of my favorite hobbies,
+                as I enjoy creating things through logic and creativity.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary" data-i18n="hero-btn-work">View My Work</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero-btn-contact">Contact Me</a>
+            </div>
+            <a href="#about" class="scroll-indicator">
+                <span data-i18n="hero-scroll">Explore More</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                <span data-i18n="section-about-title">Professional Profile</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-subtitle gradient-text" data-i18n="section-about-subtitle">Passionate about coding
+                        and continuous learning</h3>
+                    <p data-i18n="about-p1">
+                        My name is Hasti Mohsin, a student at Lebanese French University from Kurdistan.
+                        Coding is one of my favorite hobbies, as I enjoy creating things through logic and creativity.
+                    </p>
+                    <p data-i18n="about-p2">
+                        I like exploring new ideas, learning continuously, and improving my thinking through
+                        programming.
+                        My goal is to develop innovative solutions and contribute to meaningful projects.
+                    </p>
+
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="mee.jpg" alt="Profile" id="profile-image" fetchpriority="high">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                <span data-i18n="section-skills-title">Skills & Expertise</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="section-skills-subtitle">Technologies and tools I work with</p>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>C++</h3>
+                    <p>Object-oriented programming and algorithms</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
+                            alt="MS Office" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>MS Office</h3>
+                    <p>Word, Excel, PowerPoint proficiency</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            alt="React" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>React.js</h3>
+                    <p>Building dynamic user interfaces</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                            alt="Next.js" width="48" height="48" style="filter: invert(1);" loading="lazy">
+                    </div>
+                    <h3>Next.js</h3>
+                    <p>Production-grade React applications</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            alt="Node.js" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>Server-side JavaScript runtime</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                            alt="Express.js" width="48" height="48" style="filter: invert(1);" loading="lazy">
+                    </div>
+                    <h3>Express.js</h3>
+                    <p>Fast, minimalist web framework</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon skill-icon-group">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5" width="40" height="40" loading="lazy">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                            width="40" height="40" loading="lazy">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" width="40" height="40" loading="lazy">
+                    </div>
+                    <h3>HTML, CSS, JavaScript</h3>
+                    <p>Frontend web development fundamentals</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>MongoDB Database</h3>
+                    <p>NoSQL database management</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                            alt="Firebase" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>Firebase Database</h3>
+                    <p>Real-time cloud database solutions</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://images.icon-icons.com/2699/PNG/512/backblaze_logo_icon_167821.png"
+                            alt="BackBlaze" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>BackBlaze B2 Cloud Storage</h3>
+                    <p>Cloud storage and file management</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧩</div>
+                    <h3>Problem Solving</h3>
+                    <p>Analytical thinking and debugging</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub" width="48" height="48" style="filter: invert(1);" loading="lazy">
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Version control and collaboration</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                            alt="Vercel" width="48" height="48" style="filter: invert(1);" loading="lazy">
+                    </div>
+                    <h3>Vercel</h3>
+                    <p>Deployment and hosting platform</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg"
+                            alt="Netlify" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>Netlify</h3>
+                    <p>Static site hosting and serverless functions</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+                            width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>Git</h3>
+                    <p>Distributed version control system</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" width="48" height="48" loading="lazy">
+                    </div>
+                    <h3>Render</h3>
+                    <p>Cloud platform for deploying web apps and services</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                <span data-i18n="section-projects-title">Projects</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="section-projects-subtitle">A collection of my recent work and
+                creative endeavors</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="moviflix.png" alt="Social Media Dashboard" id="project3-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="#" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Movieflix</h3>
+                        <p data-i18n="project-desc-movieflix">a website to watch movies online with a modern design ,
+                            responsive layout and high quality .
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">express.js</span>
+                            <span class="tag">Tailwind</span>
+                            <span class="tag">backblaze</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="LFU.png" alt="LFU AI" id="project4-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="https://lfu-ai.vercel.app/" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>LFU AI </h3>
+                        <p data-i18n="project-desc-lfu">Real-time chat application powered by AI with natural language
+                            processing and smart
+                            responses for students of Lebanese French University.</p>
+                        <div class="project-tags">
+                            <span class="tag">nextjs</span>
+                            <span class="tag">express.js</span>
+                            <span class="tag">firebase</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Screenshot 2025-12-22 200220.png" alt="Gym Management System" id="project5-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="#" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gym Management System</h3>
+                        <p data-i18n="project-desc-gym">A comprehensive gym management platform with member tracking,
+                            automated email notifications
+                            for expired memberships, and real-time analytics dashboard.</p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Nodemailer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./build.png" alt="Project Name" id="project6-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="https://build-computer.vercel.app/" target="_blank" class="project-link">View
+                                Project →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Build Computers</h3>
+                        <p data-i18n="project-desc-build">An e-commerce platform for custom PC building, offering
+                            components selection, compatibility
+                            checking, and complete pre-built systems with a modern shopping experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./warger.png" alt="Warger File Converter" id="project7-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="https://warger-kurdi.vercel.app/" target="_blank" class="project-link">View Project
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Warger</h3>
+                        <p data-i18n="project-desc-warger">A versatile file converter tool that seamlessly transforms
+                            documents between multiple formats including PDF to Word, Word to PPTX, PPTX to Word, and
+                            more.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./zer.png" alt="Zer Gold Price Tracker" id="project8-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="https://zer-website.vercel.app/gold-prices" target="_blank"
+                                class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Zer - Gold Price Tracker</h3>
+                        <p data-i18n="project-desc-zer">A real-time gold price tracker for the Kurdistan market,
+                            displaying live prices for 18K, 21K, 22K, and 24K gold in Iraqi Dinar and USD, with daily
+                            price history and a built-in currency calculator.</p>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">MongoDB Atlas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./raparin.png" alt="Raparin Youth Organization" id="project9-image" loading="lazy" width="600" height="250">
+                        <div class="project-overlay">
+                            <a href="https://raparinorganization.com" target="_blank" class="project-link">View Project
+                                →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Raparin Youth Organization</h3>
+                        <p data-i18n="project-desc-raparin">A multilingual website for the Raparin Youth Organization,
+                            founded in 2022 in Kurdistan. Features a modern dark-blue UI with Kurdish, Arabic, and
+                            English language support, activities showcase, and contact sections.</p>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">Upstash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                <span data-i18n="section-experience-title">Work Experience</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="section-experience-subtitle">My professional journey and career
+                milestones</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="exp-role">Volunteer</div>
+                        <h3 data-i18n="exp-org">Ministry of Higher Education</h3>
+                        <h4 data-i18n="exp-dept">ICT Directory, System Department</h4>
+                        <p data-i18n="exp-desc">Volunteered at the Ministry of Higher Education, contributing to ICT
+                            projects and system
+                            development initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span>
+                <span data-i18n="section-certificates-title">Certificates</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="section-certificates-subtitle">Professional certifications and
+                achievements</p>
+
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./Google certificate  2.png" alt="Google Certificate Of Digital Marketing" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./Google certificate  2.png" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Google Certificate Of Digital Marketing</h3>
+                        <p class="certificate-issuer">Google</p>
+                        <p class="certificate-date">2024</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./Screenshot 2025-12-21 171858.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./IEEE Certificate  2.pdf" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Institute of Electrical and Electronics
+                            Engineers <br />( IEEE )</h3>
+                        <p class="certificate-issuer">IEEE</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="cihan.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="cihan.png" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>AI and Robotics exhibition ,institute
+                            Cihan</h3>
+                        <p class="certificate-issuer">AI and Robotics exhibition</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./Nasa.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./NASA Space Apps Challenge.pdf" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>NASA Space Apps Challenge</h3>
+                        <p class="certificate-issuer">NASA</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./Screenshot 2025-12-21 171937.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./NICE Certificates (2).pdf" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>National Innovation Competition in
+                            Engineering (NICE)</h3>
+                        <p class="certificate-issuer">NICE</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="tecno.jpeg" alt="TECNO AI BootCamp Certificate" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="tecno.jpeg" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>TECNO AI BootCamp 2025</h3>
+                        <p class="certificate-issuer">TECNO</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./nicer.PNG" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./nicer.PNG" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>NICER</h3>
+                        <p class="certificate-issuer">Robotics</p>
+                        <p class="certificate-date">2024</p>
+                    </div>
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="./knowledge.PNG" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <div class="certificate-overlay">
+                            <a href="./knowledge.PNG" target="_blank" class="view-certificate">View
+                                Certificate</a>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>WEB Developer </h3>
+                        <p class="certificate-issuer">Corse</p>
+                        <p class="certificate-date">2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span>
+                <span data-i18n="section-contact-title">Let's Connect</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="section-contact-subtitle">Have a project in mind? Let's work
+                together!</p>
+
+
+
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                    <h3 data-i18n="contact-email-label">Email</h3>
+                    <a href="mailto:hastemuhsin2005@gmail.com">hastemuhsin2005@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h3 data-i18n="contact-phone-label">Phone</h3>
+                            <a href="tel:+9647511676815">+964 751 167 6815</a>
+                            <div class="messaging-apps">
+                                <a href="https://wa.me/9647511676815" target="_blank" class="msg-icon" title="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://t.me/+9647511676815" target="_blank" class="msg-icon" title="Telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="viber://chat?number=+9647511676815" class="msg-icon" title="Viber">
+                                    <i class="fab fa-viber"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/haste-muhsin-abb0052b4/" target="_blank"
+                            class="social-link" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+
+
+                        <a href="https://www.instagram.com/haste_muhsin/" target="_blank" class="social-link"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram" style="font-size: 24px;"></i>
+                        </a>
+                        <a href="https://www.facebook.com/haste.muhsin" target="_blank" class="social-link"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook" style="font-size: 24px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer-text">&copy; 2025 <span class="christmas-h">H</span>asti Mohsin. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
