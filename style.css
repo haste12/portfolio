@@ -1405,11 +1405,7 @@ body.loading-active {
     display: flex;
     align-items: baseline;
     gap: 0.25em;
-    /* Gradient fill on the whole name */
-    background: linear-gradient(135deg, var(--pl-accent-start) 0%, var(--pl-accent-end) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* No gradient on parent — moved to .pl-char so mobile can render it */
 }
 
 .pl-word {
@@ -1417,12 +1413,13 @@ body.loading-active {
 }
 
 .pl-space {
-    /* Inherit gradient — just spacing */
     display: inline-block;
     width: 0.35em;
 }
 
-/* Each character slides up + fades in */
+/* Each character slides up + fades in.
+   Gradient is applied HERE (per-character) so mobile Safari/Chrome
+   can correctly composite -webkit-background-clip:text with opacity animation. */
 .pl-char {
     display: inline-block;
     opacity: 0;
@@ -1430,6 +1427,14 @@ body.loading-active {
     animation: pl-char-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     /* Stagger via CSS custom property --i injected in HTML */
     animation-delay: calc(var(--i) * 0.065s + 0.1s);
+    /* Gradient text — applied per character for mobile compatibility */
+    background: linear-gradient(135deg, var(--pl-accent-start) 0%, var(--pl-accent-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Ensure crisp rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    will-change: transform, opacity;
 }
 
 @keyframes pl-char-in {
