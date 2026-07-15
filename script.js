@@ -33,9 +33,28 @@ function type() {
     setTimeout(type, typingSpeed);
 }
 
-// Start typing animation when page loads
+// ── PRELOADER — 3-second name-reveal intro ──────────────────
+// Total duration: 2.5s animation + 0.5s fade-out = 3.0s
+// JS only handles timing/removal; CSS @keyframes drive all animation.
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(type, 1000);
+    const overlay = document.getElementById('preloader');
+    if (!overlay) return;
+
+    // After 2.5s the bar is full — trigger the 0.5s fade-out
+    const FADE_START = 2500;   // ms — when fade begins
+    const FADE_DONE  = 3100;   // ms — when overlay is fully gone + cleanup
+
+    setTimeout(() => {
+        overlay.classList.add('pl-hide');         // triggers CSS fade/scale transition
+        document.body.classList.remove('loading-active');
+        document.body.classList.add('loaded');
+    }, FADE_START);
+
+    setTimeout(() => {
+        overlay.remove();                         // clean up DOM
+        // Start hero typing animation after loader is gone
+        setTimeout(type, 200);
+    }, FADE_DONE);
 });
 
 // Hamburger Menu Toggle
@@ -173,10 +192,7 @@ function highlightNavigation(scrollPosition) {
 // Parallax effect for gradient orbs - cached reference, driven by shared rAF loop
 const orbs = document.querySelectorAll('.gradient-orb');
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
+// Loading state handled by preloader
 
 // ============================================================
 // Language Switcher (English / Kurdish)
@@ -236,6 +252,11 @@ const translations = {
         'section-contact-subtitle': "Have a project in mind? Let's work together!",
         'contact-email-label': 'Email',
         'contact-phone-label': 'Phone',
+        'preload-skill-1': 'Full-Stack Web Development',
+        'preload-skill-2': 'Next.js & React Apps',
+        'preload-skill-3': 'C++ & OOP Algorithms',
+        'preload-skill-4': 'MongoDB & Cloud Databases',
+        'preload-skill-5': 'Beautiful UI/UX Interfaces',
         'footer-text': '© 2025 Hasti Mohsin. All rights reserved.',
     },
     ku: {
@@ -292,6 +313,11 @@ const translations = {
         'section-contact-subtitle': 'پڕۆژەیەکت بیربابێتە؟ با باشان کار بکەین!',
         'contact-email-label': 'ئیمەیڵ',
         'contact-phone-label': 'تەلەفۆن',
+        'preload-skill-1': 'گەشەپێدانی وێبی فول ستایک',
+        'preload-skill-2': 'ئەپەکانی Next.js و React',
+        'preload-skill-3': 'کۆدکردنی C++ و ئەلگۆریتمەکان',
+        'preload-skill-4': 'داتابەیسی MongoDB و Firebase',
+        'preload-skill-5': 'ڕووکاری ناوازە و مۆدێرن',
         'footer-text': '© 2025 هاستە موحسین. هەموو مافەکان پارێزراون.',
     }
 };

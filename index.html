@@ -14,15 +14,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Load fonts non-blocking with font-display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
     <!-- Font Awesome deferred -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
 </head>
 
-<body>
+<body class="loading-active">
+    <!-- ============================================================
+         PRELOADER / INTRO ANIMATION
+         3-second intro: name reveal + gradient underline + progress bar
+         To customise: change .pl-name text and --pl-accent-start/end colors
+         ============================================================ -->
+    <div id="preloader" class="pl-overlay">
+        <!-- Radial glow spotlight -->
+        <div class="pl-glow"></div>
+        <!-- Floating subtle orbs -->
+        <div class="pl-orb pl-orb-1"></div>
+        <div class="pl-orb pl-orb-2"></div>
+
+        <div class="pl-center">
+            <!-- Developer name — change text here to customise -->
+            <h1 class="pl-name" id="pl-name">
+                <span class="pl-word" aria-label="Haste">
+                    <span class="pl-char" style="--i:0">H</span><span class="pl-char" style="--i:1">a</span><span class="pl-char" style="--i:2">s</span><span class="pl-char" style="--i:3">t</span><span class="pl-char" style="--i:4">e</span>
+                </span>
+                <span class="pl-space">&nbsp;</span>
+                <span class="pl-word" aria-label="Mohsin">
+                    <span class="pl-char" style="--i:5">M</span><span class="pl-char" style="--i:6">o</span><span class="pl-char" style="--i:7">h</span><span class="pl-char" style="--i:8">s</span><span class="pl-char" style="--i:9">i</span><span class="pl-char" style="--i:10">n</span>
+                </span>
+            </h1>
+
+            <!-- Gradient underline that draws itself left-to-right -->
+            <div class="pl-underline"></div>
+
+            <!-- Subtitle tagline -->
+            <p class="pl-tagline">Full-Stack Developer &amp; Creative Coder</p>
+        </div>
+
+        <!-- Minimal elegant progress bar at bottom -->
+        <div class="pl-progress-wrap">
+            <div class="pl-progress-bar" id="pl-progress-bar"></div>
+        </div>
+    </div>
+
     <!-- Background Orbs for entire site -->
     <div class="site-background">
         <div class="gradient-orb orb-1"></div>
@@ -255,7 +300,8 @@
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" width="48" height="48" loading="lazy">
+                        <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" width="48" height="48"
+                            loading="lazy">
                     </div>
                     <h3>Render</h3>
                     <p>Cloud platform for deploying web apps and services</p>
@@ -278,7 +324,8 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="moviflix.png" alt="Social Media Dashboard" id="project3-image" loading="lazy" width="600" height="250">
+                        <img src="moviflix.png" alt="Social Media Dashboard" id="project3-image" loading="lazy"
+                            width="600" height="250">
                         <div class="project-overlay">
                             <a href="#" target="_blank" class="project-link">View Project →</a>
                         </div>
@@ -324,7 +371,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./Screenshot 2025-12-22 200220.png" alt="Gym Management System" id="project5-image" loading="lazy" width="600" height="250">
+                        <img src="./Screenshot 2025-12-22 200220.png" alt="Gym Management System" id="project5-image"
+                            loading="lazy" width="600" height="250">
                         <div class="project-overlay">
                             <a href="#" target="_blank" class="project-link">View Project →</a>
                         </div>
@@ -345,7 +393,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./build.png" alt="Project Name" id="project6-image" loading="lazy" width="600" height="250">
+                        <img src="./build.png" alt="Project Name" id="project6-image" loading="lazy" width="600"
+                            height="250">
                         <div class="project-overlay">
                             <a href="https://build-computer.vercel.app/" target="_blank" class="project-link">View
                                 Project →</a>
@@ -368,7 +417,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./warger.png" alt="Warger File Converter" id="project7-image" loading="lazy" width="600" height="250">
+                        <img src="./warger.png" alt="Warger File Converter" id="project7-image" loading="lazy"
+                            width="600" height="250">
                         <div class="project-overlay">
                             <a href="https://warger-kurdi.vercel.app/" target="_blank" class="project-link">View Project
                                 →</a>
@@ -390,7 +440,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./zer.png" alt="Zer Gold Price Tracker" id="project8-image" loading="lazy" width="600" height="250">
+                        <img src="./zer.png" alt="Zer Gold Price Tracker" id="project8-image" loading="lazy" width="600"
+                            height="250">
                         <div class="project-overlay">
                             <a href="https://zer-website.vercel.app/gold-prices" target="_blank"
                                 class="project-link">View Project →</a>
@@ -413,7 +464,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./raparin.png" alt="Raparin Youth Organization" id="project9-image" loading="lazy" width="600" height="250">
+                        <img src="./raparin.png" alt="Raparin Youth Organization" id="project9-image" loading="lazy"
+                            width="600" height="250">
                         <div class="project-overlay">
                             <a href="https://raparinorganization.com" target="_blank" class="project-link">View Project
                                 →</a>
@@ -452,7 +504,8 @@
                         <div class="timeline-date" data-i18n="exp1-date">Data Entry Specialist</div>
                         <h3 data-i18n="exp1-org">Ministry of Higher Education</h3>
                         <h4 data-i18n="exp1-role">ICT Directorate & Systems Department</h4>
-                        <p data-i18n="exp1-desc">Performed data entry operations in the ICT Directorate & Systems Department.</p>
+                        <p data-i18n="exp1-desc">Performed data entry operations in the ICT Directorate & Systems
+                            Department.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -461,7 +514,8 @@
                         <div class="timeline-date" data-i18n="exp2-date">Freelancer</div>
                         <h3 data-i18n="exp2-org">Full stack - Web Developer</h3>
                         <h4 data-i18n="exp2-role">Self-employed</h4>
-                        <p data-i18n="exp2-desc">Designed, developed, and maintained custom, responsive, and performance-optimized websites using React, Next.js, and modern web standards.</p>
+                        <p data-i18n="exp2-desc">Designed, developed, and maintained custom, responsive, and
+                            performance-optimized websites using React, Next.js, and modern web standards.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -470,7 +524,8 @@
                         <div class="timeline-date" data-i18n="exp3-date">Digital Marketing</div>
                         <h3 data-i18n="exp3-org">TECNO Company</h3>
                         <h4 data-i18n="exp3-role">Marketing & Collaborations</h4>
-                        <p data-i18n="exp3-desc">Executed digital marketing campaigns, analyzed user reach, and designed promotional materials to strengthen brand presence.</p>
+                        <p data-i18n="exp3-desc">Executed digital marketing campaigns, analyzed user reach, and designed
+                            promotional materials to strengthen brand presence.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -479,7 +534,8 @@
                         <div class="timeline-date" data-i18n="exp4-date">Social Media Management</div>
                         <h3 data-i18n="exp4-org">Raparin Youth Organisation</h3>
                         <h4 data-i18n="exp4-role">ڕێکخراوی گەنجانی ڕاپەڕین</h4>
-                        <p data-i18n="exp4-desc">Managed social media platforms, curated digital content, and expanded organization outreach and engagement within the community.</p>
+                        <p data-i18n="exp4-desc">Managed social media platforms, curated digital content, and expanded
+                            organization outreach and engagement within the community.</p>
                     </div>
                 </div>
             </div>
@@ -499,7 +555,8 @@
             <div class="certificates-grid">
                 <div class="certificate-card">
                     <div class="certificate-image">
-                        <img src="./Google certificate  2.png" alt="Google Certificate Of Digital Marketing" loading="lazy" width="400" height="200">
+                        <img src="./Google certificate  2.png" alt="Google Certificate Of Digital Marketing"
+                            loading="lazy" width="400" height="200">
                         <div class="certificate-overlay">
                             <a href="./Google certificate  2.png" target="_blank" class="view-certificate">View
                                 Certificate</a>
@@ -513,7 +570,8 @@
                 </div>
                 <div class="certificate-card">
                     <div class="certificate-image">
-                        <img src="./Screenshot 2025-12-21 171858.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <img src="./Screenshot 2025-12-21 171858.png" alt="Certificate Name" loading="lazy" width="400"
+                            height="200">
                         <div class="certificate-overlay">
                             <a href="./IEEE Certificate  2.pdf" target="_blank" class="view-certificate">View
                                 Certificate</a>
@@ -557,7 +615,8 @@
                 </div>
                 <div class="certificate-card">
                     <div class="certificate-image">
-                        <img src="./Screenshot 2025-12-21 171937.png" alt="Certificate Name" loading="lazy" width="400" height="200">
+                        <img src="./Screenshot 2025-12-21 171937.png" alt="Certificate Name" loading="lazy" width="400"
+                            height="200">
                         <div class="certificate-overlay">
                             <a href="./NICE Certificates (2).pdf" target="_blank" class="view-certificate">View
                                 Certificate</a>
@@ -572,7 +631,8 @@
                 </div>
                 <div class="certificate-card">
                     <div class="certificate-image">
-                        <img src="tecno.jpeg" alt="TECNO AI BootCamp Certificate" loading="lazy" width="400" height="200">
+                        <img src="tecno.jpeg" alt="TECNO AI BootCamp Certificate" loading="lazy" width="400"
+                            height="200">
                         <div class="certificate-overlay">
                             <a href="tecno.jpeg" target="_blank" class="view-certificate">View
                                 Certificate</a>

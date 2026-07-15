@@ -1291,3 +1291,422 @@ html[dir="rtl"] .footer {
         flex-direction: row-reverse;
     }
 }
+
+/* ============================================================
+   PRELOADER — Name Reveal Intro Animation
+   Matches site palette: deep black bg, purple→blue gradient,
+   violet/pink glow, Inter/Poppins bold font.
+   Change --pl-accent-start / --pl-accent-end to retheme.
+   ============================================================ */
+
+/* ── Lock scroll while loading ── */
+body.loading-active {
+    overflow: hidden !important;
+}
+
+/* ── Overlay backdrop ── */
+.pl-overlay {
+    /* Change bg colour here */
+    --pl-bg:            #09090f;
+    --pl-accent-start:  #7c3aed;  /* purple */
+    --pl-accent-end:    #3b82f6;  /* blue   */
+    --pl-glow-a:        #a855f7;  /* violet glow */
+    --pl-glow-b:        #ec4899;  /* pink glow   */
+
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--pl-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Exit: fade + slight scale-up over 0.5s */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+
+.pl-overlay.pl-hide {
+    opacity: 0;
+    transform: scale(1.03);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ── Radial glow spotlight behind name ── */
+.pl-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: clamp(300px, 60vw, 600px);
+    height: clamp(300px, 60vw, 600px);
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(168, 85, 247, 0.22) 0%,
+        rgba(236, 72, 153, 0.1) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    animation: pl-glow-breathe 3s ease-in-out infinite;
+}
+
+@keyframes pl-glow-breathe {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -55%) scale(1);   }
+    50%       { opacity: 1;   transform: translate(-50%, -55%) scale(1.12); }
+}
+
+/* ── Floating ambient orbs ── */
+.pl-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.18;
+    pointer-events: none;
+    animation: pl-orb-drift 12s ease-in-out infinite;
+}
+.pl-orb-1 {
+    width: 280px; height: 280px;
+    background: var(--pl-accent-start);
+    top: 10%; left: 5%;
+    animation-delay: 0s;
+}
+.pl-orb-2 {
+    width: 220px; height: 220px;
+    background: var(--pl-accent-end);
+    bottom: 10%; right: 5%;
+    animation-delay: -6s;
+}
+@keyframes pl-orb-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* ── Centre content ── */
+.pl-center {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ── Developer name — each letter animates in ── */
+.pl-name {
+    /* Change font-size for your preference */
+    font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+    font-size: clamp(2.8rem, 9vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25em;
+    /* Gradient fill on the whole name */
+    background: linear-gradient(135deg, var(--pl-accent-start) 0%, var(--pl-accent-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pl-word {
+    display: inline-flex;
+}
+
+.pl-space {
+    /* Inherit gradient — just spacing */
+    display: inline-block;
+    width: 0.35em;
+}
+
+/* Each character slides up + fades in */
+.pl-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(32px);
+    animation: pl-char-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    /* Stagger via CSS custom property --i injected in HTML */
+    animation-delay: calc(var(--i) * 0.065s + 0.1s);
+}
+
+@keyframes pl-char-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Gradient underline draws left→right ── */
+.pl-underline {
+    height: 3px;
+    width: 0%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--pl-accent-start), var(--pl-accent-end));
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.6), 0 0 24px rgba(59, 130, 246, 0.35);
+    /* Starts drawing after all letters are visible (~0.9s) */
+    animation: pl-line-draw 0.55s ease-out 0.95s forwards;
+}
+
+@keyframes pl-line-draw {
+    to { width: 100%; }
+}
+
+/* ── Tagline fades in after underline ── */
+.pl-tagline {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0;
+    animation: pl-fade-in 0.5s ease 1.45s forwards;
+}
+
+@keyframes pl-fade-in {
+    to { opacity: 1; }
+}
+
+/* ── Minimal progress bar at very bottom ── */
+.pl-progress-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pl-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--pl-accent-start), var(--pl-accent-end));
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.7);
+    /* Fills in exactly 2.5s — leaves 0.5s for fade-out */
+    animation: pl-bar-fill 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0s forwards;
+}
+
+@keyframes pl-bar-fill {
+    0%   { width: 0%; }
+    100% { width: 100%; }
+}
+
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0a0a0f;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                visibility 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader-bg-orbs {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.preloader-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    animation: preloaderFloat 10s infinite ease-in-out;
+}
+
+.preloader-orb.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-primary);
+    top: 20%;
+    left: 20%;
+}
+
+.preloader-orb.orb-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--accent-secondary);
+    bottom: 20%;
+    right: 20%;
+    animation-delay: -5s;
+}
+
+@keyframes preloaderFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.15);
+    }
+}
+
+.preloader-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 90%;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+                opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader-logo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    animation: logoPulse 2s infinite ease-in-out;
+}
+
+.preloader-logo .logo-brackets {
+    color: var(--accent-secondary);
+    opacity: 0.8;
+}
+
+.preloader-logo .logo-name {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 0 0.25rem;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.2));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.5));
+    }
+}
+
+/* Skills Container */
+.preloader-skills-wrapper {
+    position: relative;
+    width: 320px;
+    height: 70px;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preloader-skill-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(139, 92, 246, 0.15);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.preloader-skill-item.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.preloader-skill-item.exit {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+}
+
+.preloader-skill-item .skill-icon {
+    font-size: 1.75rem;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+    animation: iconBounce 1.5s infinite ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-skill-item[data-skill-idx="0"] .skill-icon {
+    color: #a855f7; /* Laptop code purple */
+}
+.preloader-skill-item[data-skill-idx="1"] .skill-icon {
+    color: #00d8ff; /* React cyan */
+}
+.preloader-skill-item[data-skill-idx="2"] .skill-icon {
+    color: #10b981; /* Terminal green */
+}
+.preloader-skill-item[data-skill-idx="3"] .skill-icon {
+    color: #3b82f6; /* Database blue */
+}
+.preloader-skill-item[data-skill-idx="4"] .skill-icon {
+    color: #ec4899; /* Palette pink */
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.preloader-skill-item .skill-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+/* Dots Indicator */
+.preloader-progress-indicator {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.indicator-dot.active {
+    background: var(--accent-primary);
+    transform: scale(1.4);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+/* Preloader fade out state */
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader.fade-out .preloader-content {
+    transform: translateY(-30px) scale(0.9);
+    opacity: 0;
+}
